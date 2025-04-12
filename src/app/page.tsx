@@ -1,103 +1,139 @@
-import Image from "next/image";
+"use client";
+import React from "react";
+import Header from "@/components/layers/header";
+import Footer from "@/components/layers/footer";
+import Background from "@/components/ui/background";
+import Button from "@/components/ui/button";
+import PlatformCard from "@/components/ui/platform_card";
+import { Rocket, TabletSmartphone } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <section>
+      <Background />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      <Header />
+
+      <main className="flex-1 relative z-10">
+        {/* Hero Section */}
+        <section className="relative py-20">
+          <div className="container px-4 mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+                Dekut Games Studios
+              </h1>
+              <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">
+                Conoce nuestro recien lanzamiento beta del juego{" "}
+                <strong>ROCK SHIP</strong> con acceso gratuito tanto para
+                móviles como para jugadores de pc.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  text="Descargarlo ahora"
+                  variant="primary"
+                  onClick={() => {}}
+                />
+                <Button
+                  text="Visualiza el trailer"
+                  variant="secondary"
+                  onClick={() => {}}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Platforms Section (formerly Features) */}
+        <section className="container px-4 py-16 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              Plataformas disponibles
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <PlatformCard
+              icon={<Rocket className="w-10 h-10 text-purple-400" />}
+              title="PC / Mac"
+              description="Experience the full glory of space exploration with high-end graphics and immersive gameplay on your computer."
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <PlatformCard
+              icon={<TabletSmartphone className="w-10 h-10 text-purple-400" />}
+              title="Móviles"
+              description="Explore the universe from your iOS or Android device with touch controls and cloud saves."
+            />
+          </div>
+        </section>
+
+        {/* Game Preview */}
+        <section className="container px-4 py-16 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              VISTA PREVIA DEL JUEGO
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative rounded-lg overflow-hidden border border-purple-500/30 aspect-video">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/wcb11vL-K6s"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            <div className="flex flex-col justify-center space-y-6">
+              <h3 className="text-xl md:text-2xl font-bold">
+                Experiecia inmersiva en el juego
+              </h3>
+              <p className="text-gray-300">
+                Dekut Games: Descubre un fascinante viaje a través del universo
+                infinito, la lejanía de tu exploración radica tu resistencia
+                ante diversas amenanzas cosmiscas y otras más oscuras de
+                controlar
+              </p>
+              <div className="grid grid-cols-3 gap-4">
+                <img
+                  src="https://cdn.pixabay.com/photo/2020/07/23/07/45/spaceship-5430676_1280.jpg"
+                  alt="Game screenshot 1"
+                  className="rounded-md border border-purple-500/30 aspect-square object-cover"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2020/07/23/07/45/spaceship-5430676_1280.jpg"
+                  alt="Game screenshot 2"
+                  className="rounded-md border border-purple-500/30 aspect-square object-cover"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2020/07/23/07/45/spaceship-5430676_1280.jpg"
+                  alt="Game screenshot 3"
+                  className="rounded-md border border-purple-500/30 aspect-square object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="container px-4 py-16 mx-auto text-center">
+          <div className="max-w-3xl mx-auto p-8 rounded-lg border border-purple-500/30 bg-gradient-to-b from-purple-900/20 to-blue-900/20 backdrop-blur-sm">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              ¿Estás listo para explorar el universo?
+            </h2>
+            <p className="text-gray-300 mb-8">
+              Unete a los nuevos jugadores que ya están probando la beta
+            </p>
+            <Button
+              text="Descargar ahora"
+              variant="primary"
+              onClick={() => {}}
+            />
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Footer></Footer>
+    </section>
   );
 }
