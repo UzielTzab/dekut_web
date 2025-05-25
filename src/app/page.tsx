@@ -6,6 +6,8 @@ import Background from "@/components/ui/background";
 import Button from "@/components/ui/button";
 import PlatformCard from "@/components/ui/platform_card";
 import { Rocket, TabletSmartphone } from "lucide-react";
+import { SiGoogleplay } from "react-icons/si";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -24,19 +26,40 @@ export default function Home() {
               </h1>
               <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">
                 Conoce nuestro recien lanzamiento beta del juego{" "}
-                <strong>ROCK SHIP</strong> con acceso gratuito tanto para
-                móviles como para jugadores de pc.
+                <strong>ROCK SHIP</strong> disponible en la Play Store con
+                acceso anticipado.
               </p>
+              <Image
+                src="/images/icon_app_512x512.png"
+                alt="Game Cover"
+                width={256} // Usa el tamaño real de tu imagen o el que desees
+                height={256}
+                className="mx-auto mb-8 rounded-lg border aspect-square object-cover"
+              />
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   text="Descargarlo ahora"
-                  variant="primary"
-                  onClick={() => {}}
+                  variant="icon-button"
+                  icon={<SiGoogleplay className="text-2xl text-purple-500" />}
+                  onClick={() =>
+                    window.open(
+                      "https://play.google.com/store/apps/details?id=com.DekutGames.com.unity.template.fayonce",
+                      "_blank"
+                    )
+                  }
                 />
                 <Button
                   text="Visualiza el trailer"
                   variant="secondary"
-                  onClick={() => {}}
+                  onClick={() => {
+                    const el = document.getElementById("trailer-video");
+                    if (el)
+                      el.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                        inline: "nearest",
+                      });
+                  }}
                 />
               </div>
             </div>
@@ -76,8 +99,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative rounded-lg overflow-hidden border border-purple-500/30 aspect-video">
               <iframe
+                id="trailer-video"
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/wcb11vL-K6s"
+                src="https://www.youtube.com/embed/LoHAZvr22bA"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -96,20 +120,19 @@ export default function Home() {
                 controlar
               </p>
               <div className="grid grid-cols-3 gap-4">
-                <img
-                  src="https://cdn.pixabay.com/photo/2020/07/23/07/45/spaceship-5430676_1280.jpg"
+                <Image
+                  src="/images/game_p1.jpg"
                   alt="Game screenshot 1"
                   className="rounded-md border border-purple-500/30 aspect-square object-cover"
+                  width={256}
+                  height={256}
                 />
-                <img
-                  src="https://cdn.pixabay.com/photo/2020/07/23/07/45/spaceship-5430676_1280.jpg"
-                  alt="Game screenshot 2"
+                <Image
+                  src="/images/game_p2.jpg"
+                  alt="Game screenshot 1"
                   className="rounded-md border border-purple-500/30 aspect-square object-cover"
-                />
-                <img
-                  src="https://cdn.pixabay.com/photo/2020/07/23/07/45/spaceship-5430676_1280.jpg"
-                  alt="Game screenshot 3"
-                  className="rounded-md border border-purple-500/30 aspect-square object-cover"
+                  width={256}
+                  height={256}
                 />
               </div>
             </div>
@@ -125,11 +148,19 @@ export default function Home() {
             <p className="text-gray-300 mb-8">
               Unete a los nuevos jugadores que ya están probando la beta
             </p>
-            <Button
-              text="Descargar ahora"
-              variant="primary"
-              onClick={() => {}}
-            />
+            <div className="flex justify-center">
+              <Button
+                text="Descargar ahora"
+                variant="icon-button"
+                icon={<SiGoogleplay className="text-2xl text-purple-500" />}
+                onClick={() =>
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=com.DekutGames.com.unity.template.fayonce",
+                    "_blank"
+                  )
+                }
+              />
+            </div>
           </div>
         </section>
       </main>
