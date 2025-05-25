@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div>
       <header className="relative z-10 border-b border-white/10 backdrop-blur-sm">
-        <div className="container flex items-center justify-between h-16 px-4 mx-auto">
+        <div className="container flex items-center justify-start h-16 px-4 mx-auto gap-10">
           <div className="flex items-center space-x-2">
             <Image
               src="/images/DK v2(New version).png"
@@ -45,7 +45,7 @@ export default function Header() {
               Sobre nosotros
             </Link>
           </nav>
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             {/* <Link
               href="/sign-up"
               className="hidden md:flex items-center space-x-1 text-sm text-gray-300 hover:text-purple-400 transition-colors"
@@ -53,8 +53,8 @@ export default function Header() {
               <LogIn className="text-purple-400 w-4 h-4" />
               <span>Registrarte</span>
             </Link>
-            <Link href="/signup"></Link> */}
-          </div>
+            <Link href="/signup"></Link> 
+          </div> */}
         </div>
       </header>
     </div>
