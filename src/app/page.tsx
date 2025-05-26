@@ -32,7 +32,7 @@ export default function Home() {
               <Image
                 src="/images/icon_app_512x512.png"
                 alt="Game Cover"
-                width={256} // Usa el tamaño real de tu imagen o el que desees
+                width={256}
                 height={256}
                 className="mx-auto mb-8 rounded-lg border aspect-square object-cover"
               />
@@ -66,7 +66,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Platforms Section (formerly Features) */}
         <section className="container px-4 py-16 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
@@ -139,7 +138,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Call to Action */}
         <section className="container px-4 py-16 mx-auto text-center">
           <div className="max-w-3xl mx-auto p-8 rounded-lg border border-purple-500/30 bg-gradient-to-b from-purple-900/20 to-blue-900/20 backdrop-blur-sm">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">

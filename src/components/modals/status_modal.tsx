@@ -4,7 +4,7 @@ import {
   FaExclamationCircle,
   FaInfoCircle,
   FaSpinner,
-} from "react-icons/fa"; // Íconos de react-icons
+} from "react-icons/fa";
 
 export enum StatusModalVariants {
   SUCCESS = "success",
@@ -27,7 +27,6 @@ export default function StatusModal({
   variants,
   onClose,
 }: StatusModalProps) {
-  // Función para renderizar el ícono según la variante
   const renderIcon = () => {
     switch (variants) {
       case StatusModalVariants.SUCCESS:
@@ -61,7 +60,6 @@ export default function StatusModal({
                 if (onClose) onClose();
               }}
             />
-            {/* <Button variant="secondary" text="Cerrar" onClick={() => {}} /> */}
           </div>
         </div>
       </div>
