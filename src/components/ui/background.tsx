@@ -1,7 +1,14 @@
 export default function Background() {
   return (
-    <div className="fixed inset-0 z-0 bg-[url('/images/background_dk.png')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/90 to-gray-900/90"></div>
+    <div className="fixed inset-0 -z-10 bg-black overflow-hidden">
+      <div className="stars" />
+      <div className="twinkling" />
+      <img
+        src="/images/done.png"
+        alt="nave"
+        className="navecita"
+      />
+
     </div>
   );
 }
