@@ -100,7 +100,7 @@ export default function Home() {
               <iframe
                 id="trailer-video"
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/LoHAZvr22bA"
+                src="https://www.youtube.com/embed/HB6sn2k8wv0"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
