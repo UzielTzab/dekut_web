@@ -8,6 +8,7 @@ import PlatformCard from "@/components/ui/platform_card";
 import { Rocket, TabletSmartphone } from "lucide-react";
 import { SiGoogleplay } from "react-icons/si";
 import Image from "next/image";
+import Carrusel from "@/components/ui/carrusel";
 
 export default function Home() {
   return (
@@ -73,71 +74,28 @@ export default function Home() {
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <PlatformCard
-              icon={<Rocket className="w-10 h-10 text-purple-400" />}
-              title="PC / Mac"
-              description="Experience the full glory of space exploration with high-end graphics and immersive gameplay on your computer."
-            />
-            <PlatformCard
-              icon={<TabletSmartphone className="w-10 h-10 text-purple-400" />}
-              title="Móviles"
-              description="Explore the universe from your iOS or Android device with touch controls and cloud saves."
-            />
-          </div>
-        </section>
-
-        {/* Game Preview */}
-        <section className="container px-4 py-16 mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-              VISTA PREVIA DEL JUEGO
-            </span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative rounded-lg overflow-hidden border border-purple-500/30 aspect-video">
-              <iframe
-                id="trailer-video"
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/HB6sn2k8wv0"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-
-            <div className="flex flex-col justify-center space-y-6">
-              <h3 className="text-xl md:text-2xl font-bold">
-                Experiecia inmersiva en el juego
-              </h3>
-              <p className="text-gray-300">
-                Dekut Games: Descubre un fascinante viaje a través del universo
-                infinito, la lejanía de tu exploración radica tu resistencia
-                ante diversas amenanzas cosmiscas y otras más oscuras de
-                controlar
-              </p>
-              <div className="grid grid-cols-3 gap-4">
-                <Image
-                  src="/images/game_p1.jpg"
-                  alt="Game screenshot 1"
-                  className="rounded-md border border-purple-500/30 aspect-square object-cover"
-                  width={256}
-                  height={256}
-                />
-                <Image
-                  src="/images/game_p2.jpg"
-                  alt="Game screenshot 1"
-                  className="rounded-md border border-purple-500/30 aspect-square object-cover"
-                  width={256}
-                  height={256}
-                />
-              </div>
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2  gap-8 max-w-5xl ">
+              <PlatformCard
+                icon={<Rocket className="w-10 h-10 text-purple-400" />}
+                title="PC / Mac"
+                description="Experience the full glory of space exploration with high-end graphics and immersive gameplay on your computer."
+              />
+              <PlatformCard
+                icon={
+                  <TabletSmartphone className="w-10 h-10 text-purple-400" />
+                }
+                title="Móviles"
+                description="Explore the universe from your iOS or Android device with touch controls and cloud saves."
+              />
             </div>
           </div>
         </section>
 
+        {/*Carrusel*/}
+        <Carrusel />
+
+        {/* Call to Action */}
         <section className="container px-4 py-16 mx-auto text-center">
           <div className="max-w-3xl mx-auto p-8 rounded-lg border border-purple-500/30 bg-gradient-to-b from-purple-900/20 to-blue-900/20 backdrop-blur-sm">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
