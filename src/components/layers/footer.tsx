@@ -27,7 +27,7 @@ export default function Footer() {
               href="#"
               className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
             >
-              Terminos
+              Términos
             </Link>
             <Link
               href="#"
