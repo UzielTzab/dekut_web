@@ -28,19 +28,19 @@ export default function Carrusel() {
     setModalOpen(false);
   };
 
-  const prevModal = (e: { stopPropagation: () => void; }) => {
+  const prevModal = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
     setModalIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1));
   };
 
-  const nextModal = (e: { stopPropagation: () => void; }) => {
+  const nextModal = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
     setModalIndex((prev) => (prev + 1) % screenshots.length);
   };
 
   // Cerrar modal con ESC
   useEffect(() => {
-    const handleEsc = (e: { key: string; }) => {
+    const handleEsc = (e: { key: string }) => {
       if (e.key === "Escape") closeModal();
     };
     window.addEventListener("keydown", handleEsc);
@@ -57,8 +57,9 @@ export default function Carrusel() {
         {/* Video */}
         <div className="flex-1 rounded-lg overflow-hidden border border-purple-400 shadow-md aspect-video">
           <iframe
+            id="trailer-video"
             className="w-full h-full"
-            src="https://www.youtube.com/embed/LoHAZvr22bA"
+            src="https://www.youtube.com/embed/HB6sn2k8wv0"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -86,7 +87,9 @@ export default function Carrusel() {
                 fill
                 onClick={() => openModal(index)}
                 className={`absolute inset-0 object-cover transition-opacity duration-700 ${
-                  index === current ? "opacity-100" : "opacity-0 pointer-events-none"
+                  index === current
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
                 }`}
               />
             ))}

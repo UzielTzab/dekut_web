@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import Header from "@/app/components/layers/header";
-import Footer from "@/app/components/layers/footer";
-import Background from "@/app/components/ui/background";
-import Button from "@/app/components/ui/button";
-import PlatformCard from "@/app/components/ui/platform_card";
+import Header from "@/components/layers/header";
+import Footer from "@/components/layers/footer";
+import Background from "@/components/ui/background";
+import Button from "@/components/ui/button";
+import PlatformCard from "@/components/ui/platform_card";
 import { Rocket, TabletSmartphone } from "lucide-react";
 import { SiGoogleplay } from "react-icons/si";
 import Image from "next/image";
-import Carrusel from "@/app/components/ui/carrusel";
+import Carrusel from "@/components/ui/carrusel";
 // import { VideoHeader } from "./components/ui/video_header";
 
 export default function Home() {

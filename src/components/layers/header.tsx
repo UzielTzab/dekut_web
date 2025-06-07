@@ -24,7 +24,7 @@ export default function Header() {
               href="/"
               className="text-sm hover:text-purple-400 transition-colors"
             >
-              Home
+              Inicio
             </Link>
             <Link
               href="/"
@@ -36,7 +36,7 @@ export default function Header() {
               href="/"
               className="text-sm hover:text-purple-400 transition-colors"
             >
-              Gallería
+              Galería
             </Link>
             <Link
               href="/"

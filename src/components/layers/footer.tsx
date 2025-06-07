@@ -13,26 +13,27 @@ export default function Footer() {
             </span>
           </div>
           <div className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Dekut Games. All rights reserved.
+            © {new Date().getFullYear()} Dekut Games. Todos los derechos
+            reservados.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="#"
               className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
             >
-              Privacy
+              Privacidad
             </Link>
             <Link
               href="#"
               className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
             >
-              Terms
+              Terminos
             </Link>
             <Link
               href="#"
               className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
             >
-              Contact
+              Contacto
             </Link>
           </div>
         </div>
