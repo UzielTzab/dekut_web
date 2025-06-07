@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
-import Header from "@/components/layers/header";
-import Footer from "@/components/layers/footer";
-import Background from "@/components/ui/background";
-import Button from "@/components/ui/button";
-import PlatformCard from "@/components/ui/platform_card";
+import Header from "@/app/components/layers/header";
+import Footer from "@/app/components/layers/footer";
+import Background from "@/app/components/ui/background";
+import Button from "@/app/components/ui/button";
+import PlatformCard from "@/app/components/ui/platform_card";
 import { Rocket, TabletSmartphone } from "lucide-react";
 import { SiGoogleplay } from "react-icons/si";
 import Image from "next/image";
-import Carrusel from "@/components/ui/carrusel";
+import Carrusel from "@/app/components/ui/carrusel";
+// import { VideoHeader } from "./components/ui/video_header";
 
 export default function Home() {
   return (
@@ -16,9 +17,15 @@ export default function Home() {
       <Background />
 
       <Header />
-
+      <Image
+        src="/images/screen_shoot_1.jpg"
+        alt="Game Cover"
+        width={1920}
+        height={400}
+        className="w-full h-[200px] object-cover object-center rounded-xl "
+      />
+      {/* <VideoHeader /> */}
       <main className="flex-1 relative z-10">
-        {/* Hero Section */}
         <section className="relative py-20">
           <div className="container px-4 mx-auto">
             <div className="max-w-4xl mx-auto text-center">
@@ -30,13 +37,13 @@ export default function Home() {
                 <strong>ROCK SHIP</strong> disponible en la Play Store con
                 acceso anticipado.
               </p>
-              <Image
+              {/* <Image
                 src="/images/icon_app_512x512.png"
                 alt="Game Cover"
                 width={256}
                 height={256}
                 className="mx-auto mb-8 rounded-lg border aspect-square object-cover"
-              />
+              /> */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   text="Descargarlo ahora"
@@ -79,14 +86,14 @@ export default function Home() {
               <PlatformCard
                 icon={<Rocket className="w-10 h-10 text-purple-400" />}
                 title="PC / Mac"
-                description="Experience the full glory of space exploration with high-end graphics and immersive gameplay on your computer."
+                description="Experimenta toda la grandeza de la exploración espacial con gráficos de alta calidad y una jugabilidad envolvente en tu computadora."
               />
               <PlatformCard
                 icon={
                   <TabletSmartphone className="w-10 h-10 text-purple-400" />
                 }
                 title="Móviles"
-                description="Explore the universe from your iOS or Android device with touch controls and cloud saves."
+                description="Descubre los secretos del universo desde tu móvil. Juega en Android con controles intuitivos."
               />
             </div>
           </div>
