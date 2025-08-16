@@ -4,18 +4,23 @@ interface ButtonProps {
   variant: string;
   text: string;
   icon?: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
+  className?: string;
+  type?: "button" | "submit" | "reset";
 }
 
-export default function Button({ variant, text, onClick, icon }: ButtonProps) {
+export default function Button({ variant, text, onClick, icon, className = "", type = "button" }: ButtonProps) {
   let button;
+
+  const baseClasses = "font-semibold transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent";
 
   switch (variant) {
     case "primary":
       button = (
         <button
+          type={type}
           onClick={onClick}
-          className="bg-purple-600 text-white px-5 py-5 rounded-md hover:bg-purple-500 font-bold text-sm cursor-pointer"
+          className={`${baseClasses} btn-gaming px-6 py-3 rounded-lg text-sm ${className}`}
         >
           {text}
         </button>
@@ -25,7 +30,7 @@ export default function Button({ variant, text, onClick, icon }: ButtonProps) {
       button = (
         <button
           onClick={onClick}
-          className="bg-white/10 hover:bg-white/5 border border-white/20 px-5 py-5 rounded-md cursor-pointer"
+          className={`${baseClasses} glass-effect hover-glow px-6 py-3 rounded-lg text-sm text-slate-200 hover:text-white hover:border-indigo-400/50 ${className}`}
         >
           {text}
         </button>
@@ -35,7 +40,7 @@ export default function Button({ variant, text, onClick, icon }: ButtonProps) {
       button = (
         <button
           onClick={onClick}
-          className="bg-transparent text-white border border-white/20 px-5 py-5 rounded-md hover:bg-white/10 cursor-pointer"
+          className={`${baseClasses} bg-transparent text-slate-200 border-2 border-indigo-500 px-6 py-3 rounded-lg hover:bg-indigo-500 hover:text-white hover:shadow-lg hover:shadow-indigo-500/25 ${className}`}
         >
           {text}
         </button>
@@ -45,9 +50,9 @@ export default function Button({ variant, text, onClick, icon }: ButtonProps) {
       button = (
         <button
           onClick={onClick}
-          className="bg-white text-black font-bold px-5 py-5 rounded-xl text-sm flex items-center gap-2 justify-center border border-sm hover:bg-black/60 hover:text-white hover:border-gray-800 cursor-pointer"
+          className={`${baseClasses} glass-effect hover-glow px-6 py-3 rounded-lg text-sm flex items-center gap-3 justify-center border border-slate-600/30 text-slate-200 hover:text-white hover:border-slate-500/50 ${className}`}
         >
-          <FcGoogle className="text-lg" />
+          <FcGoogle className="text-xl" />
           {text}
         </button>
       );
@@ -56,7 +61,7 @@ export default function Button({ variant, text, onClick, icon }: ButtonProps) {
       button = (
         <button
           onClick={onClick}
-          className="bg-white text-black font-bold px-5 py-5 rounded-xl text-sm flex items-center gap-2 justify-center border border-sm hover:bg-black/60 hover:text-white hover:border-gray-800 cursor-pointer"
+          className={`${baseClasses} btn-gaming px-6 py-3 rounded-lg text-sm flex items-center gap-3 justify-center hover:scale-105 ${className}`}
         >
           {icon}
           {text}

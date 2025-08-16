@@ -1,79 +1,300 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ================================
+   TEMA DE COLORES PROFESIONAL GAMING
+   ================================ */
 
-@theme inline {
+:root {
+  /* Colores principales */
+  --primary-dark: #0a0a0f;          /* Fondo principal ultra oscuro */
+  --primary-darker: #050507;         /* Fondo más oscuro para contraste */
+  --primary-light: #1a1a2e;         /* Superficie elevada */
+  
+  /* Colores de acento (Gaming Purple-Blue) */
+  --accent-primary: #6366f1;        /* Índigo vibrante */
+  --accent-secondary: #8b5cf6;      /* Violeta profesional */
+  --accent-tertiary: #06b6d4;       /* Cian gaming */
+  
+  /* Gradientes profesionales */
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+  --gradient-secondary: linear-gradient(90deg, #1e1b4b 0%, #312e81 50%, #1e3a8a 100%);
+  --gradient-accent: linear-gradient(45deg, #28295c 0%, #06b6d4 100%);
+  
+  /* Colores de texto */
+  --text-primary: #f8fafc;          /* Blanco puro para títulos */
+  --text-secondary: #cbd5e1;        /* Gris claro para texto secundario */
+  --text-muted: #64748b;            /* Gris medio para texto menos importante */
+  
+  /* Colores de estado */
+  --success: #10b981;               /* Verde para éxito */
+  --warning: #f59e0b;               /* Amarillo para advertencias */
+  --error: #ef4444;                 /* Rojo para errores */
+  
+  /* Efectos y bordes */
+  --border-primary: rgba(99, 102, 241, 0.2);    /* Borde sutil con acento */
+  --border-secondary: rgba(139, 92, 246, 0.1);   /* Borde más sutil */
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+  
+  /* Variables compatibles con Tailwind */
+  --background: var(--primary-dark);
+  --foreground: var(--text-primary);
+  
+  /* Variables compatibles con Tailwind */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Colores personalizados para Tailwind */
+  --color-primary: var(--accent-primary);
+  --color-secondary: var(--accent-secondary);
+  --color-accent: var(--accent-tertiary);
+  --color-surface: var(--primary-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ================================
+   ESTILOS BASE PROFESIONALES
+   ================================ */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--primary-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
+/* Mejora de tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ================================
+   ANIMACIONES DE FONDO ESPACIAL
+   ================================ */
+
 .stars, .twinkling {
-  position: absolute;
-  top: 0; left: 0;
+  position: fixed;
+  top: 0; 
+  left: 0;
   width: 100%;
   height: 100%;
   display: block;
-  z-index: -1;
+  z-index: -2;
+  pointer-events: none;
 }
 
 .stars {
-  background: url('/images/stars.png') repeat;
-  animation: moveStars 200s linear infinite;
-  opacity: 0.4;
+  background: url('/images/red_galaxy_512x512.png') repeat;
+  background-size: 400px 400px;
+  animation: moveStars 800s linear infinite;
+  opacity: 1;
+  filter: hue-rotate(210deg) brightness(1);
 }
 
 .twinkling {
-  background: url('/images/twinkling.png') repeat;
-  animation: moveTwinkling 100s linear infinite;
-  opacity: 0.2;
+  background: url('/images/stars_512x512.png') repeat;
+  background-size: 800px 800px;
+  animation: moveTwinkling 150s linear infinite;
+  opacity: 0.1;
+  filter: brightness(1.2) contrast(1.1);
 }
 
+/* Overlay sutil para mejorar legibilidad */
+.stars::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, transparent 5%, var(--primary-dark) 70%);
+  z-index: -1;
+}
+
+/* ================================
+   KEYFRAMES OPTIMIZADOS
+   ================================ */
+
 @keyframes moveStars {
-  from { background-position: 0 0; }
-  to { background-position: -10000px 5000px; }
+  from { 
+    background-position: 0 0; 
+    transform: translateZ(0);
+  }
+  to { 
+    background-position: -10000px 5000px; 
+    transform: translateZ(0);
+  }
 }
 
 @keyframes moveTwinkling {
-  from { background-position: 0 0; }
-  to { background-position: 10000px 10000px; }
+  from { 
+    background-position: 0 0; 
+    transform: translateZ(0);
+  }
+  to { 
+    background-position: -1000px 1000px; 
+    transform: translateZ(0);
+  }
 }
 
+/* ================================
+   ANIMACIÓN MEJORADA DE LA NAVE
+   ================================ */
 
-.navecita{
-   position: absolute;
-  bottom: 20%;
-  left: -100px;          /* empieza fuera del borde izquierdo */
-  width: 100px;
-  animation: runawayInfinite 6s linear infinite;
-  z-index: 1;
+.navecita {
+  position: fixed;
+  bottom: 15%;
+  left: -120px;
+  width: 120px;
+  height: auto;
+  animation: runawayInfinite 8s ease-in-out infinite;
+  z-index: 5;
   transform-origin: center;
+  transition: filter 0.3s ease;
+}
+
+.navecita:hover {
+  filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.8));
 }
 
 @keyframes runawayInfinite {
   0% {
-    left: -100px;
-    transform: rotate(0deg);
+    left: -120px;
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    opacity: 1;
+    transform: rotate(3deg) scale(1.05);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(7deg) scale(1.1);
   }
   100% {
-    left: 110vw;
-    transform: rotate(10deg);
+    left: calc(100vw + 120px);
+    transform: rotate(10deg) scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+/* ================================
+   EFECTOS Y UTILIDADES PROFESIONALES
+   ================================ */
+
+/* Efecto de cristal para cards */
+.glass-effect {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+/* Efecto hover profesional */
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  transform: translateY(-2px);
+}
+
+/* Gradiente de texto profesional */
+.gradient-text {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Botón profesional gaming */  
+.btn-gaming {
+  background: var(--gradient-accent);
+  color: var(--text-primary);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gaming:hover {
+  transform: translateY(-2px);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Selección de texto personalizada */
+::selection {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+/* ================================
+   RESPONSIVE Y OPTIMIZACIONES
+   ================================ */
+
+/* Reducir animaciones en dispositivos de bajo rendimiento */
+@media (prefers-reduced-motion: reduce) {
+  .stars, .twinkling, .navecita {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  
+  .gradient-text {
+    background: var(--accent-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: none;
+  }
+}
+
+/* Optimizaciones para móviles */
+@media (max-width: 768px) {
+  .stars {
+    background-size: 300px 300px;
+    animation-duration: 400s;
+  }
+  
+  .twinkling {
+    background-size: 600px 600px;
+    animation-duration: 200s;
+  }
+  
+  .navecita {
+    width: 80px;
+    bottom: 10%;
+    animation-duration: 6s;
   }
 }
