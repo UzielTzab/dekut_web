@@ -1,11 +1,10 @@
 import Button from "../ui/button";
 import {
-  FaCheckCircle,
   FaExclamationCircle,
   FaInfoCircle,
   FaSpinner,
 } from "react-icons/fa";
-import { CheckCircle, Rocket, Star, Sparkles, X } from "lucide-react";
+import { CheckCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export enum StatusModalVariants {

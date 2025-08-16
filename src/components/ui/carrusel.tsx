@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Play, Pause, ChevronLeft, ChevronRight, X, Maximize2, Volume2 } from "lucide-react";
+import { Play, Pause, ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
 
 const screenshots = [
   { 
@@ -99,16 +99,20 @@ export default function Carrusel() {
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeModal();
-      if (e.key === "ArrowLeft" && modalOpen) prevModal(e as any);
-      if (e.key === "ArrowRight" && modalOpen) nextModal(e as any);
+      if (e.key === "ArrowLeft" && modalOpen) {
+        setModalIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1));
+      }
+      if (e.key === "ArrowRight" && modalOpen) {
+        setModalIndex((prev) => (prev + 1) % screenshots.length);
+      }
       if (e.key === " " && !modalOpen) {
         e.preventDefault();
-        togglePlayPause();
+        setIsPlaying(!isPlaying);
       }
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
-  }, [modalOpen]);
+  }, [modalOpen, isPlaying]);
 
   return (
     <section className="container mx-auto px-6 py-20 max-w-7xl" id="gallery">

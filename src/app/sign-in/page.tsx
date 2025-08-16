@@ -1,7 +1,7 @@
 "use client";
 import Background from "@/components/ui/background";
 import Input from "@/components/ui/input";
-import { Lock, Mail, LogIn, Eye, EyeOff, Zap, Star, Shield } from "lucide-react";
+import { Lock, Mail, LogIn, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import Button from "@/components/ui/button";
 import LineDivider from "@/components/ui/line_divider";

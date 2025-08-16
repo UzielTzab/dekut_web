@@ -3,7 +3,7 @@ import React from "react";
 import Background from "@/components/ui/background";
 import Button from "@/components/ui/button";
 import PlatformCard from "@/components/ui/platform_card";
-import { Rocket, TabletSmartphone, Gamepad2, Users, Music } from "lucide-react";
+import { Rocket, TabletSmartphone, Gamepad2, Music } from "lucide-react";
 import { SiGoogleplay } from "react-icons/si";
 import Carrusel from "@/components/ui/carrusel";
 

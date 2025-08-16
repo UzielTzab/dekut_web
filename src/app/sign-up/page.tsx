@@ -108,7 +108,6 @@ export default function SignUp() {
         
       } else if (response.status === 409) {
         // Usuario ya existe
-        const errorData = await response.json();
         setModalConfig({
           variant: StatusModalVariants.ERROR,
           title: "Usuario Ya Existe",
