@@ -35,14 +35,21 @@ export default function Header() {
             href="#platforms"
             className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-all duration-300 hover:scale-105"
           >
-            Tienda
+            Plataformas
           </Link>
           <Link
             href="#store"
             className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-all duration-300 hover:scale-105"
           >
-            Galería
+            Tienda
           </Link>
+          <Link
+            href="#gallery"
+            className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-all duration-300 hover:scale-105"
+          >
+            Trailer
+          </Link>
+         
           <Link
             href="#about"
             className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-all duration-300 hover:scale-105"

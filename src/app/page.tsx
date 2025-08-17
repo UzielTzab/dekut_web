@@ -34,10 +34,10 @@ export default function Home() {
         </section>
 
         {/* Content Section - Separado del hero */}
-        <section className="relative py-24">
+        <section className="relative py-24" id="about">
           <div className="container px-6 mx-auto max-w-7xl">
             <div className="max-w-5xl mx-auto text-center">
-              <div className="max-w-3xl mx-auto text-xl md:text-2xl text-slate-300 mb-12 font-light leading-relaxed">
+              <div className="max-w-3xl mx-auto text-xl md:text-2xl text-slate-300 mb-12 font-light leading-relaxed" >
                 <div className="text-center mb-16">
                   <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text">
                     ¿Qué es Dekut Games Studios?
@@ -101,7 +101,7 @@ export default function Home() {
         </section>
 
         {/* Platforms Section - Rediseñada */}
-        <section className="container px-6 py-20 mx-auto max-w-7xl">
+        <section className="container px-6 py-20 mx-auto max-w-7xl" id="platforms">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Plataformas Disponibles</span>
